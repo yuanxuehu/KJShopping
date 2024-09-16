@@ -31,6 +31,8 @@ static NSString * const kPlayerItemLoadedTimeRangesContext = @"PlayerItemLoadedT
     self.fd_prefersNavigationBarHidden = YES;
     self.fd_interactivePopDisabled = YES;
     
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
