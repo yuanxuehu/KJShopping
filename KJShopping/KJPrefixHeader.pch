@@ -1,0 +1,33 @@
+//
+//  KJPrefixHeader.pch
+//  KJShopping
+//
+//  Created by TigerHu on 2024/4/20.
+//
+
+#ifndef KJPrefixHeader_h
+#define KJPrefixHeader_h
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "Masonry.h"
+#import <SDWebImage.h>
+
+#import "KJUtils.h"
+#import "KJShowMessage.h"
+#import "UIViewController+KJTopViewController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
+// 宏定义
+#import "KJPublicMacros.h"
+#import "KJColor+Font+Space.h"
+
+#import "NSDictionary+KJSafe.h"
+#import "KJSharedUserInfo.h"
+#import "KJCommonlyMethods.h"
+
+#import "KJNetConfig.h"
+#import "KJAPIManager.h"
+
+#import "KJRouter.h"
+
+#endif /* KJPrefixHeader_h */
