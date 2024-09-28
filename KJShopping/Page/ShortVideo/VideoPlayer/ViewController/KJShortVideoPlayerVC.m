@@ -198,6 +198,7 @@
         videoView.tag = kVideoViewTag + index;
         [videoView.imageView sd_setImageWithURL:[NSURL URLWithString:info.shortPicUrl]];
         
+        //短视频Player图层
         KJPlayerVC *playerVC = [[KJPlayerVC alloc] init];
         playerVC.delegate = self;
         [self addChildViewController:playerVC];
@@ -220,6 +221,7 @@
             self.currentIndex = 0;
         }
         
+        //短视频Cover图层
         KJShortVideoPlayerCoverVC *coverVC = [[KJShortVideoPlayerCoverVC alloc] init];
         coverVC.delegate = self;
         coverVC.isHome = self.isHome;

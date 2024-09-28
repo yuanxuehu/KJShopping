@@ -55,7 +55,6 @@
     if (self.isFirstLoad) {
         self.isFirstLoad = NO;
     } else {
-        
         if (self.navBarView.currentIndex < 2) {
             
 //            for (TMShortVideoPlayerVC *VC in self.childViewControllers) {
@@ -95,8 +94,8 @@
     
     @weakify(self);
     self.navBarView.chooseBlock = ^(NSInteger index) {
-        
         @strongify(self);
+        
         [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH * index, 0)];
         [self addChildViewIndex:index];
         
@@ -110,9 +109,7 @@
 //                }
             }
         } else {
-            
             if (index < 2) {
-                
                 self.navBarView.isNeedWhite = YES;
             }
         }
@@ -193,22 +190,18 @@
     
     [self.view addSubview:self.scrollView];
     [self.view addSubview:self.navBarView];
-    @weakify(self);
+    [self.scrollView addSubview:self.conatinerView];
+ 
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
         make.left.right.equalTo(self.view);
         make.top.offset(0);
         make.bottom.offset(0);
     }];
-    
-    [self.scrollView addSubview:self.conatinerView];
     [self.conatinerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
         make.edges.equalTo(self.scrollView);
         make.height.equalTo(self.scrollView);
         make.width.equalTo(self.scrollView);
     }];
-    
 }
 
 - (void)addChildViewIndex:(NSInteger)index {
@@ -434,14 +427,12 @@
     }
 }
 
-#pragma mark - TMHomeHeadChooseViewDelegate
+#pragma mark - KJHomeHeadChooseViewDelegate
 - (void)homeHeadChooseViewButtonClick:(NSInteger)index
 {
     if (index == 3) {//直播
-        
-//        [TMRouterInstance pushURL:@"TMLivesVC"];
+        [KJRouterInstance pushURL:@"KJLiveStreamingPlayerVC"];
     } else if (index == 4) {//搜索
-        
 //        [TMRouterInstance pushURL:@"TMSearchVC"];
     } else {//我的
         
@@ -449,7 +440,6 @@
 //            [TMRouterInstance pushURL:@"TMLoginMobileVC" extraParams:nil];
 //            return;
 //        }
-            
 //        [KJRouterInstance pushURL:@"TMPersonCenterVC"];
     }
 }
@@ -485,7 +475,6 @@
 - (KJHomeHeadChooseView *)navBarView
 {
     if (!_navBarView) {
-        
         _navBarView = [[KJHomeHeadChooseView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NavBarHeight)];
         _navBarView.delegate = self;
     }

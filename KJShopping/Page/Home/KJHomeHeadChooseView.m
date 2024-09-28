@@ -6,7 +6,6 @@
 //
 
 #import "KJHomeHeadChooseView.h"
-//#import <SDWebImage/UIImage+GIF.h>
 
 @implementation KJHomeHeadChooseView
 
@@ -133,20 +132,17 @@
     _isNeedWhite = isNeedWhite;
     
     if (isNeedWhite) {
-    
-//        NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"liveLogo_white" ofType:@"gif"]];
-//        self.liveImageView.image = [UIImage sd_imageWithGIFData:gif];
+        NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"liveLogo_white" ofType:@"gif"]];
+        self.liveImageView.image = [UIImage sd_imageWithGIFData:gif];
         self.searchImageView.image = UIImageName(@"navSearch_white");
         self.myImageView.image = UIImageName(@"navMine_white");
         self.focusLabel.textColor = [UIColor whiteColor];
         self.videoLabel.textColor = [UIColor whiteColor];
         self.goodsLabel.textColor = [UIColor whiteColor];
         self.slider.backgroundColor = [UIColor whiteColor];
-        
     } else {
-        
-//        NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"liveLogo_black" ofType:@"gif"]];
-//        self.liveImageView.image = [UIImage sd_imageWithGIFData:gif];
+        NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"liveLogo_black" ofType:@"gif"]];
+        self.liveImageView.image = [UIImage sd_imageWithGIFData:gif];
         self.searchImageView.image = UIImageName(@"navSearch_black");
         self.myImageView.image = UIImageName(@"navMine_black");
         self.focusLabel.textColor = [UIColor blackColor];
@@ -166,17 +162,13 @@
 - (void)headChoose:(UIButton *)button
 {
     if (button.tag < 3) {
-        
         if (self.currentIndex != button.tag) {
-            
             self.currentIndex = button.tag;
             
 //            [[NSNotificationCenter defaultCenter] postNotificationName:kHomePlayForIndex object:[NSNumber numberWithInteger:button.tag]];
         }
     } else {
-        
         if (self.delegate && [self.delegate respondsToSelector:@selector(homeHeadChooseViewButtonClick:)]) {
-            
             [self.delegate homeHeadChooseViewButtonClick:button.tag];
         }
     }
@@ -278,8 +270,8 @@
 {
     if (!_liveImageView) {
         _liveImageView = [[UIImageView alloc] init];
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"liveLogo_white" ofType:@"gif"];
-//        _liveImageView.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"liveLogo_white" ofType:@"gif"];
+        _liveImageView.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
         _liveImageView.alpha = 0.7;
         [self addSubview:_liveImageView];
     }

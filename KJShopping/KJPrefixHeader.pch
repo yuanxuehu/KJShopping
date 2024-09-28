@@ -11,6 +11,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Masonry.h"
 #import <SDWebImage.h>
+#import <HexColors/HexColors.h>
 
 #import "KJUtils.h"
 #import "KJShowMessage.h"
