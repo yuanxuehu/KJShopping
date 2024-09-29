@@ -7,6 +7,8 @@
 
 #import "KJAudienceRoomVC.h"
 #import "KJAudienceRoomCoverView.h"
+
+#import "KJRoom.h"
 #import <SVGA.h>
 
 @interface KJAudienceRoomVC () <KJAudienceRoomCoverViewDelegate, SVGAPlayerDelegate>
@@ -15,7 +17,7 @@
 }
 
 @property (nonatomic, copy) NSString *roomId;
-//@property (nonatomic, strong) KJRoom *liveRoom;
+@property (nonatomic, strong) KJRoom *liveRoom;
 
 // 直播间遮盖view
 @property (nonatomic, strong) KJAudienceRoomCoverView *roomCoverView;
@@ -82,6 +84,13 @@
     
     [self initCoverView];
     
+    CGFloat bottomEdge = isIPhoneX ? -39 : -5;
+    [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.offset(-15);
+        make.bottom.offset(bottomEdge-5);
+        make.width.height.offset(30);
+    }];
+    
 }
 
 #pragma mark - Init CoverUI
@@ -95,9 +104,13 @@
 }
 
 
-- (void)multiLiveRoomPlayInfoSetting:(KJLiveRoomPlayInfo *)liveRoomPlayInfo WithInView:(UIView *)inView withKJAudienceRoomVC:(KJAudienceRoomVC *)audienceRoomVC
+- (void)multiLiveRoomPlayInfoSetting:(KJLivingRoomPlayInfo *)liveRoomPlayInfo WithInView:(UIView *)inView withKJAudienceRoomVC:(KJAudienceRoomVC *)audienceRoomVC
 {
     
+    //每切换一次直播需重设代理
+    self.liveRoom = [KJRoom sharedInstance];
+    
+    self.liveRoom.roomPlayInfo = liveRoomPlayInfo;
     
 }
 
@@ -116,6 +129,78 @@
     //[self.roomCoverView resignFirstResponderForTextField];
 }
 
+- (void)slideFromLeftToRight
+{
+    [self hideCoverViewByAnimation];
+}
+
+- (void)slideFromRightToLeft
+{
+    [self showCoverViewByAnimation];
+}
+
+- (void)hideCoverViewByAnimation
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        //离开屏幕
+        CGRect frame = self.roomCoverView.frame;
+        frame.origin.x = SCREEN_WIDTH;
+        self.roomCoverView.frame = frame;
+      
+        self.closeButton.hidden = NO;
+//        self.giftAnimation.hidden = NO;
+   }];
+}
+
+- (void)showCoverViewByAnimation
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect frame = self.roomCoverView.frame;
+        frame.origin.x = 0;
+        self.roomCoverView.frame = frame;
+        
+        self.closeButton.hidden = YES;
+//        self.giftAnimation.hidden = YES;
+    }];
+}
+
+- (void)closeRoom {
+  
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - 界面滑动监听
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+//    [self.roomCoverV resignFirstResponderForTextField];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+    // 1.获取手指
+    UITouch *touch = [touches anyObject];
+    // 2.获取触摸的上一个位置
+    CGPoint lastPoint;
+    CGPoint currentPoint;
+    
+    lastPoint = [touch previousLocationInView:self.roomCoverView];
+    currentPoint = [touch locationInView:self.roomCoverView];
+        
+    NSLog(@"lastPoint = %@, currentPoint = %@", (NSStringFromCGPoint(lastPoint)), (NSStringFromCGPoint(currentPoint)));
+    
+    //判断是左右滑动
+    if (ABS(currentPoint.x - lastPoint.x) > ABS(currentPoint.y - lastPoint.y)) {
+        
+        if (currentPoint.x - lastPoint.x > 5) {
+            //右滑清屏
+            [self hideCoverViewByAnimation];
+        } else if (lastPoint.x - currentPoint.x > 5) {
+            //左滑还原
+            [self showCoverViewByAnimation];
+        }
+    }
+}
+
 #pragma mark - Lazy loading
 //背景图片
 - (UIImageView *)imgRoomBg
@@ -125,6 +210,17 @@
         _imgRoomBg.image = [UIImage imageNamed:@"livingRoom_bg_image"];
     }
     return _imgRoomBg;
+}
+
+- (UIButton *)closeButton
+{
+    if (!_closeButton) {
+        _closeButton = [[UIButton alloc] init];
+        [_closeButton setImage:[UIImage imageNamed:@"icon_living_quit"] forState:UIControlStateNormal];
+        [_closeButton addTarget:self action:@selector(closeRoom) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_closeButton];
+    }
+    return _closeButton;
 }
 
 @end

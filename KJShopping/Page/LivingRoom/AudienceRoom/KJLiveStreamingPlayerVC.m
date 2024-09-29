@@ -71,6 +71,12 @@
     //首次获取数据
     KJLivingRoomPlayInfo *liveInfo1 = [[KJLivingRoomPlayInfo alloc] init];
     liveInfo1.playUrl = @"playUrl";
+    liveInfo1.anchorImg = @"defaultHead";
+    liveInfo1.anchorName = @"主播名称";
+    liveInfo1.onlineUserCount = 1234;
+    liveInfo1.isFollow = NO;
+    
+    
     KJLivingRoomPlayInfo *liveInfo2 = [[KJLivingRoomPlayInfo alloc] init];
     liveInfo2.playUrl = @"playUrl";
     KJLivingRoomPlayInfo *liveInfo3 = [[KJLivingRoomPlayInfo alloc] init];

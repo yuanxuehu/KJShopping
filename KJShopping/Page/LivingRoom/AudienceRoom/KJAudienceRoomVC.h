@@ -7,7 +7,7 @@
 
 #import "KJVC.h"
 
-@class KJLiveRoomPlayInfo;
+@class KJLivingRoomPlayInfo;
 
 typedef void(^KJAudienceRoomBlock)(void);
 
@@ -21,7 +21,7 @@ typedef void(^KJAudienceRoomBlock)(void);
 //多直播间专用
 @property (nonatomic, assign) BOOL isFromMultiLiveRoom;
 
-- (void)multiLiveRoomPlayInfoSetting:(KJLiveRoomPlayInfo *)liveRoomPlayInfo WithInView:(UIView *)inView withKJAudienceRoomVC:(KJAudienceRoomVC *)audienceRoomVC;
+- (void)multiLiveRoomPlayInfoSetting:(KJLivingRoomPlayInfo *)liveRoomPlayInfo WithInView:(UIView *)inView withKJAudienceRoomVC:(KJAudienceRoomVC *)audienceRoomVC;
 
 - (void)multiLiveRoomWithStopLastRoom;
 

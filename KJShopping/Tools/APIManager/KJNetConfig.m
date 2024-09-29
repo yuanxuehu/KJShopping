@@ -50,9 +50,9 @@ NSString *const kNetEnv_Soure = @"kNetEnv_Soure";
     _map =
     @{
       @(KJ_NET_ENV_DEBUG) : @{
-              kNetEnv_newHttp : @"https://index.xinhaokuai.cn",
-              kNetEnv_Http : @"https://api.xinhaokuai.cn",
-              kNetEnv_WXOpen_Http : @"http://wxopen.teamax-cn.cn/api/User/TenApiAuth",
+              kNetEnv_newHttp : @"https://index.company.cn",
+              kNetEnv_Http : @"https://api.company.cn",
+              kNetEnv_WXOpen_Http : @"http://wxopen.company-cn.cn/api/User/TenApiAuth",
               kNetEnv_VerifyCode_Http : @"http://service-jj54exnq-1251048739.ap-guangzhou.apigateway.myqcloud.com/release/zbsendverify",
               kNetEnv_AppId : @"tm000001",
               kNetEnv_AppSecret : @"Tm@w0,1,*Apphdn@7r48u6g4b1v0f6y4",
@@ -60,12 +60,12 @@ NSString *const kNetEnv_Soure = @"kNetEnv_Soure";
               kNetEnv_Soure : @"ZbApp",
               },
       @(KJ_NET_ENV_RELEASE) : @{
-              kNetEnv_newHttp : @"https://index.xinhaokuai.cn",
-              kNetEnv_Http : @"https://api.xinhaokuai.cn",
-              kNetEnv_WXOpen_Http : @"http://wxopen.teamax-cn.cn/api/User/TenApiAuth",
+              kNetEnv_newHttp : @"https://index.company.cn",
+              kNetEnv_Http : @"https://api.company.cn",
+              kNetEnv_WXOpen_Http : @"http://wxopen.company-cn.cn/api/User/TenApiAuth",
               kNetEnv_VerifyCode_Http : @"http://service-jj54exnq-1251048739.ap-guangzhou.apigateway.myqcloud.com/release/zbsendverify",
               kNetEnv_AppId : @"tm000001",
-              kNetEnv_AppSecret : @"Tm@w0,1,*Apphdn@7r48u6g4b1v0f6y4",
+              kNetEnv_AppSecret : @"AppSecret",
               kNetEnv_ApiType : @"zhiBo",
               kNetEnv_Soure : @"ZbApp",
               },

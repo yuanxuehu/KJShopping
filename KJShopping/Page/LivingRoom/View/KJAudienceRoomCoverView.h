@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class KJChatModel;
+
 @protocol KJAudienceRoomCoverViewDelegate <NSObject>
 
 - (void)closeRoom;
@@ -41,7 +43,7 @@
 - (void)addNewChatMsgWithText:(NSString *)text;
 
 // 添加接收到的消息到列表
-//- (void)addRecvChatMsg:(TMChatModel *)model;
+- (void)addRecvChatMsg:(KJChatModel *)model;
 
 /// 更新当前直播商品显示
 /// @param infoDic 商品信息

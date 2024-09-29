@@ -53,6 +53,11 @@
 		68CA41F12CA7FC3900DEBD45 /* liveLogo_white.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68CA41EF2CA7FC3900DEBD45 /* liveLogo_white.gif */; };
 		68CA41F52CA7FE7900DEBD45 /* KJLiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA41F42CA7FE7900DEBD45 /* KJLiveView.m */; };
 		68CA41F82CA82D6D00DEBD45 /* KJAudienceRoomCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA41F72CA82D6D00DEBD45 /* KJAudienceRoomCoverView.m */; };
+		68CA41FC2CA949F000DEBD45 /* KJCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA41FB2CA949F000DEBD45 /* KJCommentVC.m */; };
+		68CA41FF2CA94C2200DEBD45 /* KJLivingChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA41FE2CA94C2200DEBD45 /* KJLivingChatTableView.m */; };
+		68CA42032CA94DDD00DEBD45 /* KJChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA42022CA94DDD00DEBD45 /* KJChatModel.m */; };
+		68CA42062CA94FBF00DEBD45 /* KJCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA42052CA94FBF00DEBD45 /* KJCommentCell.m */; };
+		68CA425B2CA989FF00DEBD45 /* KJRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CA425A2CA989FF00DEBD45 /* KJRoom.m */; };
 		CEB63431715D5443C2E2F858 /* libPods-KJShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADBA3682764576F16EA0B48 /* libPods-KJShopping.a */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +181,16 @@
 		68CA41F42CA7FE7900DEBD45 /* KJLiveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJLiveView.m; sourceTree = "<group>"; };
 		68CA41F62CA82D6D00DEBD45 /* KJAudienceRoomCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJAudienceRoomCoverView.h; sourceTree = "<group>"; };
 		68CA41F72CA82D6D00DEBD45 /* KJAudienceRoomCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJAudienceRoomCoverView.m; sourceTree = "<group>"; };
+		68CA41FA2CA949F000DEBD45 /* KJCommentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJCommentVC.h; sourceTree = "<group>"; };
+		68CA41FB2CA949F000DEBD45 /* KJCommentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJCommentVC.m; sourceTree = "<group>"; };
+		68CA41FD2CA94C2200DEBD45 /* KJLivingChatTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJLivingChatTableView.h; sourceTree = "<group>"; };
+		68CA41FE2CA94C2200DEBD45 /* KJLivingChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJLivingChatTableView.m; sourceTree = "<group>"; };
+		68CA42012CA94DDD00DEBD45 /* KJChatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJChatModel.h; sourceTree = "<group>"; };
+		68CA42022CA94DDD00DEBD45 /* KJChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJChatModel.m; sourceTree = "<group>"; };
+		68CA42042CA94FBF00DEBD45 /* KJCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJCommentCell.h; sourceTree = "<group>"; };
+		68CA42052CA94FBF00DEBD45 /* KJCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJCommentCell.m; sourceTree = "<group>"; };
+		68CA42592CA989FF00DEBD45 /* KJRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJRoom.h; sourceTree = "<group>"; };
+		68CA425A2CA989FF00DEBD45 /* KJRoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJRoom.m; sourceTree = "<group>"; };
 		EADBA3682764576F16EA0B48 /* libPods-KJShopping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KJShopping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -492,6 +507,7 @@
 		68CA41DE2C9B231C00DEBD45 /* LivingRoom */ = {
 			isa = PBXGroup;
 			children = (
+				68CA41F92CA949BD00DEBD45 /* CommentUI */,
 				68CA41F22CA7FDEC00DEBD45 /* View */,
 				68CA41E62C9B250100DEBD45 /* Model */,
 				68CA41DF2C9B232D00DEBD45 /* AudienceRoom */,
@@ -517,6 +533,8 @@
 				68CA41E82C9B254800DEBD45 /* KJLivingRoomPlayInfo.m */,
 				68CA41EA2C9B258700DEBD45 /* KJLivingRoomPushInfo.h */,
 				68CA41EB2C9B258700DEBD45 /* KJLivingRoomPushInfo.m */,
+				68CA42592CA989FF00DEBD45 /* KJRoom.h */,
+				68CA425A2CA989FF00DEBD45 /* KJRoom.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +557,21 @@
 				68CA41F72CA82D6D00DEBD45 /* KJAudienceRoomCoverView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		68CA41F92CA949BD00DEBD45 /* CommentUI */ = {
+			isa = PBXGroup;
+			children = (
+				68CA41FA2CA949F000DEBD45 /* KJCommentVC.h */,
+				68CA41FB2CA949F000DEBD45 /* KJCommentVC.m */,
+				68CA41FD2CA94C2200DEBD45 /* KJLivingChatTableView.h */,
+				68CA41FE2CA94C2200DEBD45 /* KJLivingChatTableView.m */,
+				68CA42042CA94FBF00DEBD45 /* KJCommentCell.h */,
+				68CA42052CA94FBF00DEBD45 /* KJCommentCell.m */,
+				68CA42012CA94DDD00DEBD45 /* KJChatModel.h */,
+				68CA42022CA94DDD00DEBD45 /* KJChatModel.m */,
+			);
+			path = CommentUI;
 			sourceTree = "<group>";
 		};
 		9654619EE053CB78148D8DDE /* Frameworks */ = {
@@ -734,6 +767,7 @@
 				68CA41BF2C98845600DEBD45 /* KJVideoView.m in Sources */,
 				68C3775B2BD3A31600AC463B /* KJHomeVC.m in Sources */,
 				68CA41B52C98664100DEBD45 /* KJUtils.m in Sources */,
+				68CA42062CA94FBF00DEBD45 /* KJCommentCell.m in Sources */,
 				68CA41E92C9B254800DEBD45 /* KJLivingRoomPlayInfo.m in Sources */,
 				68CA41AB2C9855F600DEBD45 /* KJHomeHostModelView.m in Sources */,
 				68C377752BD6629D00AC463B /* KJSharedUserInfo.m in Sources */,
@@ -743,6 +777,7 @@
 				68CA41E52C9B23AF00DEBD45 /* KJAudienceRoomVC.m in Sources */,
 				68C3776A2BD6596300AC463B /* KJAPIManager.m in Sources */,
 				68CA41F82CA82D6D00DEBD45 /* KJAudienceRoomCoverView.m in Sources */,
+				68CA41FF2CA94C2200DEBD45 /* KJLivingChatTableView.m in Sources */,
 				68C3777D2BD6759F00AC463B /* UIViewController+KJTopViewController.m in Sources */,
 				68CA41B02C98567A00DEBD45 /* KJHomeHostInfo.m in Sources */,
 				68CA41E22C9B235500DEBD45 /* KJLiveStreamingPlayerVC.m in Sources */,
@@ -754,10 +789,13 @@
 				68CA41C22C9884EF00DEBD45 /* KJLiveNumView.m in Sources */,
 				68CA41BB2C98693D00DEBD45 /* KJVideoAnchorInfo.m in Sources */,
 				68C377312BD356F700AC463B /* main.m in Sources */,
+				68CA42032CA94DDD00DEBD45 /* KJChatModel.m in Sources */,
 				68CA41EC2C9B258700DEBD45 /* KJLivingRoomPushInfo.m in Sources */,
 				68CA41A52C98510E00DEBD45 /* KJPlayerVC.m in Sources */,
+				68CA41FC2CA949F000DEBD45 /* KJCommentVC.m in Sources */,
 				68C377802BD6772900AC463B /* KJRouter.m in Sources */,
 				68C377232BD356F600AC463B /* SceneDelegate.m in Sources */,
+				68CA425B2CA989FF00DEBD45 /* KJRoom.m in Sources */,
 				68CA41B82C9868CB00DEBD45 /* KJVideoInfo.m in Sources */,
 				68CA41A22C984FEA00DEBD45 /* KJShortVideoPlayerVC.m in Sources */,
 				68CA41C52C98853300DEBD45 /* KJHostListView.m in Sources */,

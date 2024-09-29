@@ -11,46 +11,46 @@
 
 @interface KJLivingRoomPlayInfo : NSObject
 
-//播放地址
-@property (nonatomic, strong) NSString *playUrl;
+//拉流地址
+@property (nonatomic, copy) NSString *playUrl;
 //直播间Id
-@property (nonatomic, strong) NSString *roomId;
+@property (nonatomic, copy) NSString *roomId;
 //主播id
-@property (nonatomic, strong) NSString *anchorId;
+@property (nonatomic, copy) NSString *anchorId;
 //主播名称
-@property (nonatomic, strong) NSString *anchorName;
+@property (nonatomic, copy) NSString *anchorName;
 //主播头像
-@property (nonatomic, strong) NSString *anchorImg;
+@property (nonatomic, copy) NSString *anchorImg;
 //是否关注当前主播
 @property (nonatomic, assign) BOOL isFollow;
 //预告id
-@property (nonatomic, strong) NSString *noticeId;
+@property (nonatomic, copy) NSString *noticeId;
 //直播标题
-@property (nonatomic, strong) NSString *noticeTitle;
+@property (nonatomic, copy) NSString *noticeTitle;
 //直播类型 1:竖屏 0:横屏
 @property (nonatomic, assign) NSInteger playType;
 //直播地点
-@property (nonatomic, strong) NSString *address;
+@property (nonatomic, copy) NSString *address;
 //会员IM账号
-@property (nonatomic, strong) NSString *imAccount;
+@property (nonatomic, copy) NSString *imAccount;
 //会员IM登陆签名
-@property (nonatomic, strong) NSString *imUserSig;
+@property (nonatomic, copy) NSString *imUserSig;
 //直播间音频聊天室Id
-@property (nonatomic, strong) NSString *imGroupId;
+@property (nonatomic, copy) NSString *imGroupId;
 //店铺Id
-@property (nonatomic, strong) NSString *storeId;
+@property (nonatomic, copy) NSString *storeId;
 //店铺名称
-@property (nonatomic, strong) NSString *storeName;
+@property (nonatomic, copy) NSString *storeName;
 //店铺头像
-@property (nonatomic, strong) NSString *storeImg;
+@property (nonatomic, copy) NSString *storeImg;
 //在线人数
 @property (nonatomic, assign) NSInteger onlineUserCount;
 //点赞人数
 @property (nonatomic, assign) NSInteger thumbsUpCount;
 //预告开播时间
-@property (nonatomic, strong) NSString *livingTime;
+@property (nonatomic, copy) NSString *livingTime;
 //上次直播的直播时长
-@property (nonatomic, strong) NSString *livingDuration;
+@property (nonatomic, copy) NSString *livingDuration;
 //直播状态
 //1:直播中
 //2:预告开播
@@ -63,11 +63,11 @@
 //说明:未开播&不存在最新
 @property (nonatomic, assign) NSInteger livingStatus;
 //预告图片
-@property (nonatomic, strong) NSString *pictureUrl1;
+@property (nonatomic, copy) NSString *pictureUrl1;
 //预告图片
-@property (nonatomic, strong) NSString *pictureUrl2;
+@property (nonatomic, copy) NSString *pictureUrl2;
 //预告视频
-@property (nonatomic, strong) NSString *videoUrl;
+@property (nonatomic, copy) NSString *videoUrl;
 /** 是否获取下一个数据集*/
 @property (nonatomic, assign) NSInteger isGet;
 
